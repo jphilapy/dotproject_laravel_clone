@@ -20,9 +20,9 @@ class CreateDotpForumMessagesTable extends Migration
             $table->integer('message_author')->default(0);
             $table->integer('message_editor')->default(0);
             $table->string('message_title')->default('');
-            $table->dateTime('message_date')->default('0000-00-00 00:00:00')->index('idx_mdate');
             $table->text('message_body')->nullable();
             $table->boolean('message_published')->default(1);
+            $table->timestamps();
         });
     }
 

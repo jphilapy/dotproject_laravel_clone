@@ -18,13 +18,13 @@ class CreateDotpEventQueueTable extends Migration
             $table->integer('queue_start')->default(0);
             $table->integer('queue_repeat_interval')->default(0);
             $table->integer('queue_repeat_count')->default(0);
-            $table->longblob('queue_data');
+            $table->binary('queue_data');
             $table->string('queue_callback', 127)->default('');
             $table->integer('queue_owner')->default(0);
             $table->integer('queue_origin_id')->default(0)->index('queue_origin_id');
             $table->string('queue_module', 40)->default('')->index('queue_module');
             $table->integer('queue_batched')->default(0);
-            
+
             $table->primary(['queue_id']);
             $table->index(['queue_batched', 'queue_start'], 'queue_start');
         });

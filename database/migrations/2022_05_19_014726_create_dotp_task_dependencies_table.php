@@ -16,8 +16,8 @@ class CreateDotpTaskDependenciesTable extends Migration
         Schema::create('dotp_task_dependencies', function (Blueprint $table) {
             $table->integer('dependencies_task_id');
             $table->integer('dependencies_req_task_id');
-            
-            $table->primary(['dependencies_task_id', 'dependencies_req_task_id']);
+
+            $table->primary(['dependencies_task_id', 'dependencies_req_task_id'], 'dep_task_id_req_id');
         });
     }
 

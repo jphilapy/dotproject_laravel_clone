@@ -21,12 +21,10 @@ class CreateDotpCommonNotesTable extends Migration
             $table->unsignedInteger('note_category')->default(0);
             $table->string('note_title', 100)->default('');
             $table->text('note_body');
-            $table->dateTime('note_date')->default('0000-00-00 00:00:00');
             $table->float('note_hours')->default(0);
             $table->string('note_code', 8)->default('');
-            $table->dateTime('note_created')->default('0000-00-00 00:00:00');
-            $table->timestamp('note_modified')->nullable();
             $table->unsignedInteger('note_modified_by')->default(0);
+            $table->timestamps();
         });
     }
 

@@ -16,9 +16,8 @@ class CreateDotpSessionsTable extends Migration
         Schema::create('dotp_sessions', function (Blueprint $table) {
             $table->string('session_id', 60)->default('')->primary();
             $table->integer('session_user')->default(0);
-            $table->longblob('session_data');
-            $table->timestamp('session_updated')->nullable()->index('session_updated');
-            $table->dateTime('session_created')->default('0000-00-00 00:00:00')->index('session_created');
+            $table->binary('session_data');
+            $table->timestamps();
         });
     }
 

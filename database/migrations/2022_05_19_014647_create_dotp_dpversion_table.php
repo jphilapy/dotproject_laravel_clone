@@ -16,8 +16,7 @@ class CreateDotpDpversionTable extends Migration
         Schema::create('dotp_dpversion', function (Blueprint $table) {
             $table->string('code_version', 10)->default('');
             $table->integer('db_version')->default(0);
-            $table->date('last_db_update')->default('0000-00-00');
-            $table->date('last_code_update')->default('0000-00-00');
+            $table->timestamps();
         });
     }
 
