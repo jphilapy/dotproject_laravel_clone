@@ -14,6 +14,9 @@
                 <x-jet-nav-link href="{{ route('companies') }}" :active="request()->routeIs('companies')">
                     {{ __('Companies') }}
                 </x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('projects') }}" :active="request()->routeIs('projects')">
+                    {{ __('Projects') }}
+                </x-jet-nav-link>
             </ul>
 
             <!-- Right Side Of Navbar -->

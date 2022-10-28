@@ -5,6 +5,4 @@
         </h2>
     </x-slot>
 
-    <livewire:companies-sub-menu />
-
 </x-app-layout>

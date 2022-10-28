@@ -25,4 +25,8 @@ Route::middleware([
     Route::get('/companies', function () {
         return view('companies');
     })->name('companies');
+
+    Route::get('/projects', function () {
+        return view('projects');
+    })->name('projects');
 });
