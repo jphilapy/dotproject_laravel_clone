@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDotpSessionsTable extends Migration
+class CreateCustomFieldsListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateDotpSessionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dotp_sessions', function (Blueprint $table) {
-            $table->string('session_id', 60)->default('')->primary();
-            $table->integer('session_user')->default(0);
-            $table->binary('session_data');
-            $table->timestamps();
+        Schema::create('custom_fields_lists', function (Blueprint $table) {
+            $table->integer('field_id')->nullable();
+            $table->integer('list_option_id')->nullable();
+            $table->string('list_value', 250)->nullable();
         });
     }
 
@@ -28,6 +27,6 @@ class CreateDotpSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('custom_fields_lists');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDotpSessionsTable extends Migration
+class CreateGaclGroupsAroMapTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateDotpSessionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dotp_sessions', function (Blueprint $table) {
-            $table->string('session_id', 60)->default('')->primary();
-            $table->integer('session_user')->default(0);
-            $table->binary('session_data');
-            $table->timestamps();
+        Schema::create('gacl_groups_aro_map', function (Blueprint $table) {
+            $table->integer('group_id')->default(0);
+            $table->integer('aro_id')->default(0);
+
+            $table->primary(['group_id', 'aro_id']);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateDotpSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('gacl_groups_aro_map');
     }
 }

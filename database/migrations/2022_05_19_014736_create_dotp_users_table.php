@@ -34,6 +34,6 @@ class CreateDotpUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dotp_users');
+        Schema::dropIfExists('users');
     }
 }

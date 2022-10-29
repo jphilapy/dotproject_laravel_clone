@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDotpSessionsTable extends Migration
+class CreateTaskDepartmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateDotpSessionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dotp_sessions', function (Blueprint $table) {
-            $table->string('session_id', 60)->default('')->primary();
-            $table->integer('session_user')->default(0);
-            $table->binary('session_data');
-            $table->timestamps();
+        Schema::create('task_departments', function (Blueprint $table) {
+            $table->integer('task_id')->index('idx_task_departments');
+            $table->integer('department_id');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateDotpSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('task_departments');
     }
 }

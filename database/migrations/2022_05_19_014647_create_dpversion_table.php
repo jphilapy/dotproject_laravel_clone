@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDotpSessionsTable extends Migration
+class CreateDpversionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateDotpSessionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dotp_sessions', function (Blueprint $table) {
-            $table->string('session_id', 60)->default('')->primary();
-            $table->integer('session_user')->default(0);
-            $table->binary('session_data');
+        Schema::create('dpversion', function (Blueprint $table) {
+            $table->string('code_version', 10)->default('');
+            $table->integer('db_version')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateDotpSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('dpversion');
     }
 }
