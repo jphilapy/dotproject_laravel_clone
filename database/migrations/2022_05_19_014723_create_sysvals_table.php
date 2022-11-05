@@ -17,7 +17,7 @@ class CreateSysvalsTable extends Migration
             $table->increments('sysval_id');
             $table->unsignedInteger('sysval_key_id')->default(0);
             $table->string('sysval_title', 48)->default('')->unique('idx_sysval_title');
-            $table->text('sysval_value');
+            $table->json('sysval_value');
         });
     }
 

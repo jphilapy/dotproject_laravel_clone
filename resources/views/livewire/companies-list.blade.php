@@ -2,7 +2,7 @@
     <div
         class="d-flex flex-wrap align-items-center justify-content-end mb-3"
     >
-        <a href="#" role="button" class="btn btn-success">
+        <a href="#" role="button" class="btn btn-success" wire:click.prevent="$emit('openCompanyModal')">
             <i class="fa-solid fa-circle-plus"></i>
             <span class="ms-2 d-none d-sm-inline">Add Company</span>
         </a>
@@ -68,64 +68,67 @@
             </tr>
             </thead>
             <tbody class="table-group-divider">
-            <tr>
+            @foreach($companies as $company)
+                <tr>
 
-                <td>
-                    <a
-                        href="/customer/id"
-                        class="link-dark link:hover-warning"
-                    >
-                        <span class="text"> John Doe </span>
-                    </a>
-                </td>
-                <td>1112, N Street</td>
-                <td>
-                    <a
-                        href="https://johndoe.com"
-                        class="link-dark link:hover-warning"
-                    >
-                        <span class="text"> johndoe.com </span>
-                    </a>
-                </td>
-                <td>
-                    <a
-                        href="mailto:johndoe@domain.com"
-                        class="link-dark link:hover-warning"
-                    >
-                        <span class="text"> johndoe@domain.com </span>
-                    </a>
-                </td>
-                <td>
-                    <a
-                        href="tel:++777-777-7777"
-                        class="link-dark link:hover-warning"
-                    >
-                        <span class="text"> 777-777-7777 </span>
-                    </a>
-                </td>
-                <td>
-                    <a
-                        href="tel:++777-777-7777"
-                        class="link-dark link:hover-warning"
-                    >
-                        <span class="text"> 777-777-7777 </span>
-                    </a>
-                </td>
-                <td>
-                    <a
-                        href="#"
-                        class="btn btn-outline-secondary"
-                        role="button"
-                    >
-                        <i class="fa-regular fa-eye"></i>
-                    </a>
-                    <a href="#" class="btn btn-success ms-1" role="button">
-                        <i class="fa-regular fa-pen-to-square"></i>
-                    </a>
-                </td>
-            </tr>
+                    <td>
+                        <a
+                            href="/customer/id"
+                            class="link-dark link:hover-warning"
+                        >
+                            <span class="text"> John Doe </span>
+                        </a>
+                    </td>
+                    <td>1112, N Street</td>
+                    <td>
+                        <a
+                            href="https://johndoe.com"
+                            class="link-dark link:hover-warning"
+                        >
+                            <span class="text"> johndoe.com </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a
+                            href="mailto:johndoe@domain.com"
+                            class="link-dark link:hover-warning"
+                        >
+                            <span class="text"> johndoe@domain.com </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a
+                            href="tel:++777-777-7777"
+                            class="link-dark link:hover-warning"
+                        >
+                            <span class="text"> 777-777-7777 </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a
+                            href="tel:++777-777-7777"
+                            class="link-dark link:hover-warning"
+                        >
+                            <span class="text"> 777-777-7777 </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a
+                            href="#"
+                            class="btn btn-outline-secondary"
+                            role="button"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                        <a href="#" class="btn btn-success ms-1" role="button">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
+    <livewire:company-modal />
 </div>
 
