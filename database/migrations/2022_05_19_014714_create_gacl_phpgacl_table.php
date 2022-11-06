@@ -16,6 +16,7 @@ class CreateGaclPhpgaclTable extends Migration
         Schema::create('gacl_phpgacl', function (Blueprint $table) {
             $table->string('name', 127)->default('')->primary();
             $table->string('value', 230)->default('');
+            $table->timestamps();
         });
     }
 

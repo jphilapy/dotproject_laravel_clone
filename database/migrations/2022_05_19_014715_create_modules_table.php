@@ -30,6 +30,7 @@ class CreateModulesTable extends Migration
             $table->char('permissions_item_label', 100)->nullable();
 
             $table->primary(['mod_id', 'mod_directory']);
+            $table->timestamps();
         });
     }
 

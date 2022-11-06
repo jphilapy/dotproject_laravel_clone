@@ -14,7 +14,7 @@ class CreateUserAccessLogTable extends Migration
     public function up()
     {
         Schema::create('user_access_log', function (Blueprint $table) {
-            $table->increments('user_access_log_id');
+            $table->id();
             $table->unsignedInteger('user_id');
             $table->string('user_ip', 15);
             $table->dateTime('date_time_in');

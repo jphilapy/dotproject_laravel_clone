@@ -16,6 +16,7 @@ class CreateProjectContactsTable extends Migration
         Schema::create('project_contacts', function (Blueprint $table) {
             $table->integer('project_id');
             $table->integer('contact_id');
+            $table->timestamps();
         });
     }
 

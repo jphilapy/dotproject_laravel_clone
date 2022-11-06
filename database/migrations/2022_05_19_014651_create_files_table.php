@@ -33,6 +33,7 @@ class CreateFilesTable extends Migration
             $table->integer('file_version_id')->default(0)->index('idx_file_vid');
 
             $table->primary(['file_id']);
+            $table->timestamps();
         });
     }
 

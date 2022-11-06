@@ -19,6 +19,7 @@ class CreateUserPreferencesTable extends Migration
             $table->string('pref_value', 32)->default('');
 
             $table->index(['pref_user', 'pref_name'], 'pref_user');
+            $table->timestamps();
         });
     }
 

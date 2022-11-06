@@ -22,6 +22,7 @@ class CreateGaclAcoTable extends Migration
             $table->integer('hidden')->default(0)->index('gacl_hidden_aco');
 
             $table->unique(['section_value', 'value'], 'gacl_section_value_value_aco');
+            $table->timestamps();
         });
     }
 

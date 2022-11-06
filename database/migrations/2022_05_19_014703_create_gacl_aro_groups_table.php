@@ -23,6 +23,7 @@ class CreateGaclAroGroupsTable extends Migration
 
             $table->primary(['id', 'value']);
             $table->index(['lft', 'rgt'], 'gacl_lft_rgt_aro_groups');
+            $table->timestamps();
         });
     }
 

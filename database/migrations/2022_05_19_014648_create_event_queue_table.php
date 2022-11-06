@@ -27,6 +27,7 @@ class CreateEventQueueTable extends Migration
 
             $table->primary(['queue_id']);
             $table->index(['queue_batched', 'queue_start'], 'queue_start');
+            $table->timestamps();
         });
     }
 

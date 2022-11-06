@@ -14,12 +14,13 @@ class CreateBillingcodeTable extends Migration
     public function up()
     {
         Schema::create('billingcode', function (Blueprint $table) {
-            $table->bigInteger('billingcode_id')->primary();
+            $table->id();
             $table->string('billingcode_name', 25)->default('');
             $table->float('billingcode_value')->default(0);
             $table->string('billingcode_desc')->default('');
             $table->integer('billingcode_status')->default(0);
             $table->bigInteger('company_id')->default(0);
+            $table->timestamps();
         });
     }
 

@@ -19,6 +19,7 @@ class CreateUserEventsTable extends Migration
 
             $table->index(['user_id', 'event_id'], 'uek1');
             $table->index(['event_id', 'user_id'], 'uek2');
+            $table->timestamps();
         });
     }
 

@@ -14,7 +14,7 @@ class CreateForumsTable extends Migration
     public function up()
     {
         Schema::create('forums', function (Blueprint $table) {
-            $table->integer('forum_id')->primary();
+            $table->id();
             $table->integer('forum_project')->default(0)->index('idx_fproject');
             $table->tinyInteger('forum_status')->default(-1)->index('forum_status');
             $table->integer('forum_owner')->default(0)->index('idx_fowner');

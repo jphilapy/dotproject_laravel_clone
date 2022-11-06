@@ -22,6 +22,7 @@ class CreateGaclAroTable extends Migration
             $table->integer('hidden')->default(0)->index('gacl_hidden_aro');
 
             $table->unique(['section_value', 'value'], 'gacl_section_value_value_aro');
+            $table->timestamps();
         });
     }
 

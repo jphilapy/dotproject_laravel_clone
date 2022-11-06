@@ -18,6 +18,7 @@ class CreateTaskDependenciesTable extends Migration
             $table->integer('dependencies_req_task_id');
 
             $table->primary(['dependencies_task_id', 'dependencies_req_task_id'], 'dep_task_id_req_id');
+            $table->timestamps();
         });
     }
 

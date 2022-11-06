@@ -14,10 +14,11 @@ class CreateFileFoldersTable extends Migration
     public function up()
     {
         Schema::create('file_folders', function (Blueprint $table) {
-            $table->integer('file_folder_id')->primary();
+            $table->id();
             $table->integer('file_folder_parent')->default(0);
             $table->string('file_folder_name')->default('');
             $table->text('file_folder_description')->nullable();
+            $table->timestamps();
         });
     }
 

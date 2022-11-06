@@ -20,6 +20,7 @@ class CreateForumWatchTable extends Migration
 
             $table->index(['watch_user', 'watch_forum'], 'idx_fw1');
             $table->index(['watch_user', 'watch_topic'], 'idx_fw2');
+            $table->timestamps();
         });
     }
 

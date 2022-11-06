@@ -14,7 +14,7 @@ class CreateTaskLogTable extends Migration
     public function up()
     {
         Schema::create('task_log', function (Blueprint $table) {
-            $table->integer('task_log_id')->primary();
+            $table->id();
             $table->integer('task_log_task')->default(0)->index('idx_log_task');
             $table->string('task_log_name')->nullable();
             $table->text('task_log_description')->nullable();
@@ -25,6 +25,7 @@ class CreateTaskLogTable extends Migration
             $table->boolean('task_log_problem')->default(0);
             $table->boolean('task_log_reference')->default(0);
             $table->string('task_log_related_url')->nullable();
+            $table->timestamps();
         });
     }
 

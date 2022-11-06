@@ -14,7 +14,7 @@ class CreateDotpUsersTable extends Migration
     public function up()
     {
         Schema::create('dotp_users', function (Blueprint $table) {
-            $table->integer('user_id')->primary();
+            $table->id();
             $table->integer('user_contact')->default(0);
             $table->string('user_username')->default('')->index('idx_uid');
             $table->string('user_password', 32)->default('')->index('idx_pwd');
@@ -24,6 +24,7 @@ class CreateDotpUsersTable extends Migration
             $table->integer('user_department')->default(0);
             $table->integer('user_owner')->default(0);
             $table->text('user_signature')->nullable();
+            $table->timestamps();
         });
     }
 

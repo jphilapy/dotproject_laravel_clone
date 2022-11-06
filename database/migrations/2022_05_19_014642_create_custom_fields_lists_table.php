@@ -17,6 +17,7 @@ class CreateCustomFieldsListsTable extends Migration
             $table->integer('field_id')->nullable();
             $table->integer('list_option_id')->nullable();
             $table->string('list_value', 250)->nullable();
+            $table->timestamps();
         });
     }
 

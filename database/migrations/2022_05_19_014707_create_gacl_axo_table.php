@@ -22,6 +22,7 @@ class CreateGaclAxoTable extends Migration
             $table->integer('hidden')->default(0)->index('gacl_hidden_axo');
 
             $table->unique(['section_value', 'value'], 'gacl_section_value_value_axo');
+            $table->timestamps();
         });
     }
 

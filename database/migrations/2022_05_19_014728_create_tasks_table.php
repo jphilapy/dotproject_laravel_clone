@@ -14,7 +14,7 @@ class CreateTasksTable extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->integer('task_id')->primary();
+            $table->id();
             $table->string('task_name')->nullable();
             $table->integer('task_parent')->default(0)->index('idx_task_parent');
             $table->boolean('task_milestone')->default(0);
@@ -41,6 +41,7 @@ class CreateTasksTable extends Migration
             $table->char('task_contacts', 100)->nullable();
             $table->longText('task_custom')->nullable();
             $table->smallInteger('task_type')->default(0);
+            $table->timestamps();
         });
     }
 

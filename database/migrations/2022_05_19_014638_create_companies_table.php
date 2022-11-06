@@ -14,14 +14,14 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->integer('company_id')->primary();
+            $table->id();
             $table->integer('company_module')->default(0);
             $table->string('company_name', 100)->default('');
             $table->string('company_phone1', 30)->default('');
             $table->string('company_phone2', 30)->default('');
             $table->string('company_fax', 30)->default('');
-            $table->string('company_address1', 50)->default('');
-            $table->string('company_address2', 50)->default('');
+            $table->string('company_address1', 150)->default('');
+            $table->string('company_address2', 150)->default('');
             $table->string('company_city', 30)->default('');
             $table->string('company_state', 30)->default('');
             $table->string('company_zip', 11)->default('');
@@ -31,6 +31,7 @@ class CreateCompaniesTable extends Migration
             $table->integer('company_type')->default(0);
             $table->string('company_email')->nullable();
             $table->longText('company_custom')->nullable();
+            $table->timestamps();
         });
     }
 

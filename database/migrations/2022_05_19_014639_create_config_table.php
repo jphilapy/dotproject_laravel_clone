@@ -20,6 +20,7 @@ class CreateConfigTable extends Migration
             $table->string('config_group')->default('');
 
             $table->primary(['config_id']);
+            $table->timestamps();
         });
     }
 

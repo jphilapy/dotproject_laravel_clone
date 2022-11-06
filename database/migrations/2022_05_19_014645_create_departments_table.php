@@ -14,7 +14,7 @@ class CreateDepartmentsTable extends Migration
     public function up()
     {
         Schema::create('departments', function (Blueprint $table) {
-            $table->increments('dept_id');
+            $table->id();
             $table->unsignedInteger('dept_parent')->default(0);
             $table->unsignedInteger('dept_company')->default(0);
             $table->string('dept_name');
@@ -28,6 +28,7 @@ class CreateDepartmentsTable extends Migration
             $table->string('dept_url', 25)->nullable();
             $table->text('dept_desc')->nullable();
             $table->unsignedInteger('dept_owner')->default(0);
+            $table->timestamps();
         });
     }
 

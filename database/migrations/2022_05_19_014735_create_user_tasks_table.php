@@ -21,6 +21,7 @@ class CreateUserTasksTable extends Migration
             $table->boolean('user_task_priority')->default(0);
 
             $table->primary(['user_id', 'task_id']);
+            $table->timestamps();
         });
     }
 

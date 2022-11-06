@@ -23,6 +23,7 @@ class CreateGaclAxoGroupsTable extends Migration
 
             $table->primary(['id', 'value']);
             $table->index(['lft', 'rgt'], 'gacl_lft_rgt_axo_groups');
+            $table->timestamps();
         });
     }
 

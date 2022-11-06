@@ -14,7 +14,7 @@ class CreateProjectsTable extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->integer('project_id')->primary();
+            $table->id();
             $table->integer('project_company')->default(0)->index('idx_proj1');
             $table->integer('project_company_internal')->default(0);
             $table->integer('project_department')->default(0);
@@ -37,6 +37,7 @@ class CreateProjectsTable extends Migration
             $table->char('project_contacts', 100)->nullable();
             $table->boolean('project_priority')->default(0);
             $table->smallInteger('project_type')->default(0);
+            $table->timestamps();
         });
     }
 

@@ -18,6 +18,7 @@ class CreateGaclAroGroupsMapTable extends Migration
             $table->integer('group_id')->default(0);
 
             $table->primary(['acl_id', 'group_id']);
+            $table->timestamps();
         });
     }
 

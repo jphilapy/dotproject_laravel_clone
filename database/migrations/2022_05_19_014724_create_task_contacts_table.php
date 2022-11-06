@@ -16,6 +16,7 @@ class CreateTaskContactsTable extends Migration
         Schema::create('task_contacts', function (Blueprint $table) {
             $table->integer('task_id')->index('idx_task_contacts');
             $table->integer('contact_id');
+            $table->timestamps();
         });
     }
 

@@ -20,6 +20,7 @@ class CreateCustomFieldsValuesTable extends Migration
             $table->integer('value_field_id')->nullable();
             $table->string('value_charvalue', 250)->nullable();
             $table->integer('value_intvalue')->nullable();
+            $table->timestamps();
         });
     }
 

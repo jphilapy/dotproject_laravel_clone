@@ -14,10 +14,11 @@ class CreateSysvalsTable extends Migration
     public function up()
     {
         Schema::create('sysvals', function (Blueprint $table) {
-            $table->increments('sysval_id');
+            $table->id();
             $table->unsignedInteger('sysval_key_id')->default(0);
             $table->string('sysval_title', 48)->default('')->unique('idx_sysval_title');
             $table->json('sysval_value');
+            $table->timestamps();
         });
     }
 

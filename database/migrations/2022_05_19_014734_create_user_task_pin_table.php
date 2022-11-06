@@ -19,6 +19,7 @@ class CreateUserTaskPinTable extends Migration
             $table->boolean('task_pinned')->default(1);
 
             $table->primary(['user_id', 'task_id']);
+            $table->timestamps();
         });
     }
 

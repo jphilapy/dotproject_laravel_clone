@@ -48,6 +48,7 @@ class CreateContactsTable extends Migration
             $table->unsignedTinyInteger('contact_private')->default(0);
 
             $table->primary(['contact_id']);
+            $table->timestamps();
         });
     }
 

@@ -14,7 +14,7 @@ class CreateCommonNotesTable extends Migration
     public function up()
     {
         Schema::create('common_notes', function (Blueprint $table) {
-            $table->increments('note_id');
+            $table->id();
             $table->unsignedInteger('note_author')->default(0);
             $table->unsignedInteger('note_module')->default(0);
             $table->unsignedInteger('note_record_id')->default(0);

@@ -17,6 +17,7 @@ class CreateConfigListTable extends Migration
             $table->integer('config_list_id')->primary();
             $table->integer('config_id')->default(0)->index('config_id');
             $table->string('config_list_name', 30)->default('');
+            $table->timestamps();
         });
     }
 

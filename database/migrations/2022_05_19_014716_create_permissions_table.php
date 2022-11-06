@@ -14,13 +14,14 @@ class CreatePermissionsTable extends Migration
     public function up()
     {
         Schema::create('permissions', function (Blueprint $table) {
-            $table->integer('permission_id')->primary();
+            $table->id();
             $table->integer('permission_user')->default(0)->index('idx_puser');
             $table->string('permission_grant_on', 12)->default('');
             $table->integer('permission_item')->default(0);
             $table->integer('permission_value')->default(0)->index('idx_pvalue');
 
             $table->unique(['permission_grant_on', 'permission_item', 'permission_user'], 'idx_pgrant_on');
+            $table->timestamps();
         });
     }
 

@@ -19,6 +19,7 @@ class CreateGaclAroSectionsTable extends Migration
             $table->integer('order_value')->default(0);
             $table->string('name', 230)->default('');
             $table->integer('hidden')->default(0)->index('gacl_hidden_aro_sections');
+            $table->timestamps();
         });
     }
 

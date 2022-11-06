@@ -19,6 +19,7 @@ class CreateFilesIndexTable extends Migration
             $table->integer('word_placement')->default(0);
 
             $table->primary(['file_id', 'word', 'word_placement']);
+            $table->timestamps();
         });
     }
 

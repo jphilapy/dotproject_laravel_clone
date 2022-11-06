@@ -14,11 +14,12 @@ class CreateGaclAxoSectionsTable extends Migration
     public function up()
     {
         Schema::create('gacl_axo_sections', function (Blueprint $table) {
-            $table->integer('id')->default(0)->primary();
+            $table->id();
             $table->string('value', 80)->default('')->unique('gacl_value_axo_sections');
             $table->integer('order_value')->default(0);
             $table->string('name', 230)->default('');
             $table->integer('hidden')->default(0)->index('gacl_hidden_axo_sections');
+            $table->timestamps();
         });
     }
 

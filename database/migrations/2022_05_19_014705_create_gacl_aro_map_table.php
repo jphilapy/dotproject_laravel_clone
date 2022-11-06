@@ -19,6 +19,7 @@ class CreateGaclAroMapTable extends Migration
             $table->string('value', 80)->default('');
 
             $table->primary(['acl_id', 'section_value', 'value']);
+            $table->timestamps();
         });
     }
 

@@ -18,6 +18,7 @@ class CreateGaclGroupsAxoMapTable extends Migration
             $table->integer('axo_id')->default(0);
 
             $table->primary(['group_id', 'axo_id']);
+            $table->timestamps();
         });
     }
 

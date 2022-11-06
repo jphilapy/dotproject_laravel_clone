@@ -16,6 +16,7 @@ class CreateTaskDepartmentsTable extends Migration
         Schema::create('task_departments', function (Blueprint $table) {
             $table->integer('task_id')->index('idx_task_departments');
             $table->integer('department_id');
+            $table->timestamps();
         });
     }
 

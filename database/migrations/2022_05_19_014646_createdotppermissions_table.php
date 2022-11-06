@@ -24,6 +24,7 @@ class CreateDotppermissionsTable extends Migration
             $table->integer('enabled')->default(0);
 
             $table->index(['user_id', 'section', 'permission', 'axo'], 'user_id');
+            $table->timestamps();
         });
     }
 

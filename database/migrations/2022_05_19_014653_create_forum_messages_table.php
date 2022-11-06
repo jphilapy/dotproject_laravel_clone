@@ -14,7 +14,7 @@ class CreateForumMessagesTable extends Migration
     public function up()
     {
         Schema::create('forum_messages', function (Blueprint $table) {
-            $table->integer('message_id')->primary();
+            $table->id();
             $table->integer('message_forum')->default(0)->index('idx_mforum');
             $table->integer('message_parent')->default(0)->index('idx_mparent');
             $table->integer('message_author')->default(0);

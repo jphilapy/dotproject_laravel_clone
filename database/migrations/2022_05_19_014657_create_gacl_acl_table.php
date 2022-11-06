@@ -21,6 +21,7 @@ class CreateGaclAclTable extends Migration
             $table->longText('return_value')->nullable();
             $table->longText('note')->nullable();
             $table->integer('updated_date')->default(0)->index('gacl_updated_date_acl');
+            $table->timestamps();
         });
     }
 

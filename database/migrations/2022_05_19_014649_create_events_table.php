@@ -14,7 +14,7 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->integer('event_id')->primary();
+            $table->id();
             $table->string('event_title')->default('');
             $table->dateTime('event_start_date')->nullable()->index('id_esd');
             $table->dateTime('event_end_date')->nullable()->index('id_eed');
@@ -30,6 +30,7 @@ class CreateEventsTable extends Migration
             $table->boolean('event_type')->default(0);
             $table->boolean('event_cwd')->default(0);
             $table->boolean('event_notify')->default(0);
+            $table->timestamps();
         });
     }
 

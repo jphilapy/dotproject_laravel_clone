@@ -20,6 +20,7 @@ class CreateForumVisitsTable extends Migration
             $table->timestamp('visit_date')->nullable();
 
             $table->index(['visit_user', 'visit_forum', 'visit_message'], 'idx_fv');
+            $table->timestamps();
         });
     }
 

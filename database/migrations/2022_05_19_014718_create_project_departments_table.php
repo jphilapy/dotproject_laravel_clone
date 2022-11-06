@@ -16,6 +16,7 @@ class CreateProjectDepartmentsTable extends Migration
         Schema::create('project_departments', function (Blueprint $table) {
             $table->integer('project_id');
             $table->integer('department_id');
+            $table->timestamps();
         });
     }
 

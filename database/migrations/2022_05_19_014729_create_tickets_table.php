@@ -14,7 +14,7 @@ class CreateTicketsTable extends Migration
     public function up()
     {
         Schema::create('tickets', function (Blueprint $table) {
-            $table->increments('ticket');
+            $table->id();
             $table->integer('ticket_company')->default(0);
             $table->integer('ticket_project')->default(0);
             $table->string('author', 100)->default('');
@@ -30,6 +30,7 @@ class CreateTicketsTable extends Migration
             $table->string('cc')->default('');
             $table->text('body');
             $table->text('signature')->nullable();
+            $table->timestamps();
         });
     }
 

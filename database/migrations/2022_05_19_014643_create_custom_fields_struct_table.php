@@ -23,6 +23,7 @@ class CreateCustomFieldsStructTable extends Migration
             $table->string('field_name', 100)->nullable();
             $table->string('field_extratags', 250)->nullable();
             $table->string('field_description', 250)->nullable();
+            $table->timestamps();
         });
     }
 
